@@ -1,0 +1,26 @@
+version: 1
+
+disable_existing_loggers: False
+
+formatters: 
+  short:
+    format: "%(asctime)s %(levelname)s [%(name)s] %(message)s"
+    datefmt: "%H:%M:%S"
+  long:
+    format: "%(asctime)s %(levelname)s [%(name)s] %(message)s"
+    datefmt: '%Y-%m-%d %H:%M:%S'
+handlers:
+  file_handler:
+    class: logging.FileHandler 
+    level: INFO
+    formatter: long
+    filename: logs.log
+    mode: "a"
+    encoding: utf8
+  console_handler:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: short
+root:
+  level: DEBUG
+  handlers: [file_handler, console_handler]

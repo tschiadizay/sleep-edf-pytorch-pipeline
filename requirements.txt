@@ -1,0 +1,9 @@
+PyYAML
+h5py
+mne
+numpy
+pandas
+torch
+scikit-learn
+tqdm
+xlrd>=2.0.1
