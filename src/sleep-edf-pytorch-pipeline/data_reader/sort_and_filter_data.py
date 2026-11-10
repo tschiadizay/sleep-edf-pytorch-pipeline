@@ -674,6 +674,7 @@ if __name__== "__main__":
     # functions.
     base_dir = Path(
         "") # TODO
+    base_dir = base_dir / "SleepEDFConverted"
     for study_type in ["telemetry", "cassette"]:
         # Create Config
         main(Config(
