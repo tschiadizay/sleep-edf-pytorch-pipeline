@@ -12,11 +12,15 @@ cd <base_dir>
 wget -r -N -c -np https://physionet.org/files/sleep-edfx/1.0.0/
 ```
 
-The download creates "<base_dir>/physionet.org/files/sleep-edfx/1.0.0/" with the needed files and file structure.
-
+The download creates "<base_dir>/physionet.org/files/sleep-edfx/1.0.0/" with the needed files and file structure. To set the "<base_dir>" for each file process, edit in each script the line `"base_dir = Path("")  # TODO"` in its ```__main__``` block with the path to "<base_dir>". 
 ## Running
 
-Run all scripts as modules from "src/sleep-edf-pytorch-pipeline/" (because relative paths are used). Each script has a "base_dir = Path("")  # TODO" in its ```__main__``` block that you must set first with `<base_dir>`:
+### Running assumptions
+1. The scripts are ran in order: convert_data_to_hdf5, sort_and_filter_data and then load_data_to_pytorch but not all scripts need to be ran. 
+2. `"base_dir = Path("")  # TODO"` in the ```__main__``` of each used script is set with the "<base_dir>" containing the downloaded "physionet.org" folder. 
+3. It is assumed that a "SleepEDFConverted" folder is allowed to be created in "<base_dir>" in which all outputs are generated.
+
+Run all scripts as modules from "src/sleep-edf-pytorch-pipeline/" (because relative paths are used).
 
 ### 1. Convert .edf files to .hdf5 file
 
