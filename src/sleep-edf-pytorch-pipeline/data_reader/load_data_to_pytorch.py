@@ -297,6 +297,7 @@ if __name__ == "__main__":
     # Dataset and how one train_loader/test_loader might be created.
     base_dir = Path(
         "") # TODO
+    base_dir = base_dir / "SleepEDFConverted"
     study_types : list[Literal["cassette", "telemetry"]] = [
         "cassette", "telemetry"]
 
